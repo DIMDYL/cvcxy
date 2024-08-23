@@ -1,6 +1,6 @@
- # MyToDoList
+ # CV程序员
 
-## http://mytodolist.cn/
+## http://cvcxy.cn/
 
 ## 技术：
 

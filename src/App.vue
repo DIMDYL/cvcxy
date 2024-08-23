@@ -8,10 +8,10 @@
 ::-webkit-scrollbar-thumb {
   background-color: #252527;
   height: 50px;
-  outline-offset: -2px;
-  outline: 2px solid #fff;
-  -webkit-border-radius: 4px;
-  border: 2px solid #fff;
+  /* outline-offset: -2px; */
+  /* outline: 2px solid #fff; */
+  /* -webkit-border-radius: 4px; */
+  /* border: 2px solid #fff; */
 }
 ::-webkit-scrollbar {
   width: 8px;

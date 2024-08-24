@@ -29,7 +29,7 @@ const defaultactive = ref(location.pathname)
         <el-icon color="#409efc" class="iconfont">&#xe61d; </el-icon>
         <span>用户中心</span>
       </el-menu-item>
-      <a href="https://github.com/DIMDYL/mytodolist" target="_blank">
+      <a href="https://github.com/DIMDYL/cvcxy" target="_blank">
         <el-menu-item>
           <el-icon color="#409efc" class="iconfont">&#xe6c2; </el-icon>
           GitHub地址

@@ -1,50 +1,44 @@
 <script setup>
+import { addCode, getallclassification } from '@/api/userapi.js'
 import { ref, onMounted } from 'vue'
 import CodeMirror from 'vue-codemirror6'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { java } from '@codemirror/lang-java'
-const initJson = {
-  name: `maybaby`,
-  year: 25,
-  weight: 45,
-  height: 165
-}
+// const initJson = null
 // 初始化
 let codeVal = ref('')
 // 转成json字符串并格式化
-codeVal.value = JSON.stringify(initJson, null, '\t')
+// codeVal.value = JSON.stringify(initJson, null, '\t')
 
 // json语言
 const lang = java()
 // 扩展
 const extensions = [oneDark]
 const title = ref('')
+const Classificationid = ref('')
+const options = ref([])
+// 渲染分类
+onMounted(async () => {
+  const { data } = await getallclassification()
+  console.log(data)
+  data.forEach((item) => {
+    const step = {
+      value: item.id,
+      label: item.name
+    }
+    options.value.push(step)
+  })
+})
 
-onMounted(() => {})
-
-const value = ref('')
-const options = [
-  {
-    value: 'Option1',
-    label: 'Option1'
-  },
-  {
-    value: 'Option2',
-    label: 'Option2'
-  },
-  {
-    value: 'Option3',
-    label: 'Option3'
-  },
-  {
-    value: 'Option4',
-    label: 'Option4'
-  },
-  {
-    value: 'Option5',
-    label: 'Option5'
+// 添加code
+const add = () => {
+  const data = {
+    title: title.value,
+    classId: Classificationid.value,
+    code: codeVal.value
   }
-]
+  addCode(data)
+}
 </script>
 <template>
   <div class="raeleasecv">
@@ -58,7 +52,7 @@ const options = [
     />
     <div class="operate">
       <el-select
-        v-model="value"
+        v-model="Classificationid"
         filterable
         placeholder="请选择语言"
         style="width: 240px"
@@ -73,7 +67,7 @@ const options = [
       <el-input v-model="title" style="width: 240px" placeholder="代码标题" />
     </div>
     <div class="bottom">
-      <el-button type="primary">提交</el-button>
+      <el-button type="primary" @click="add">提交</el-button>
     </div>
   </div>
 </template>

@@ -29,7 +29,7 @@ const router = createRouter({
         {
           path: '/cv',
           component: () => import('@/views/MyCv/index.vue'),
-          meta: { title: '我的CV' }
+          meta: { title: '发布CV' }
         }
       ]
     }
@@ -37,7 +37,7 @@ const router = createRouter({
 })
 router.afterEach((to) => {
   // 获取目标路由的meta中的title信息 进行拼接，修改 页面title
-  document.title = `${to.meta.title || ''} - C V程序员 `
+  document.title = `${to.meta.title || ''} - CV程序员 `
   const contentContainer = document.querySelector('.main')
   if (contentContainer) {
     contentContainer.scrollTop = 0

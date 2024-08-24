@@ -1,6 +1,9 @@
 <script setup></script>
 
 <template>
+  <!-- <div class="boxx" ref="cvcxy">
+    <img src="@/assets/imgs/cvcxy.gif" />
+  </div> -->
   <RouterView />
 </template>
 
@@ -74,6 +77,10 @@
 
 /*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
 @media (min-width: 480px) and (max-width: 767px) {
+  /* 展示mini nav */
+  .article {
+    margin-top: 100px !important;
+  }
   .raeleasecv {
     width: calc(100vw - 40px) !important;
   }
@@ -118,6 +125,18 @@
   .raeleasecv {
     width: calc(100vw - 40px) !important;
   }
+  .info {
+    flex-wrap: wrap;
+    height: auto !important;
+  }
+  .userinfo {
+    width: 100% !important;
+  }
+  .articleinfo {
+    width: 100%;
+    display: flex;
+    justify-content: end !important;
+  }
   .panel {
     flex-wrap: wrap;
   }
@@ -154,3 +173,26 @@
   }
 }
 </style>
+<style>
+html,
+body {
+  position: relative;
+}
+.boxx {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  z-index: 9999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+<!-- <script setup>
+import { ref } from 'vue'
+const cvcxy = ref(null)
+setTimeout(() => {
+  cvcxy.value.style.display = 'none'
+}, 1000)
+</script> -->

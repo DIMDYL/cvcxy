@@ -1,6 +1,12 @@
 <script setup></script>
 <template>
   <div class="articlebox BoxColor">
+    <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
+    <div class="word">
+      <p>
+        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
+      </p>
+    </div>
     <div class="info">
       <div class="userinfo">
         <el-avatar
@@ -15,14 +21,15 @@
       <div class="articleinfo">
         <a>查看详情</a>
       </div>
-    </div>
-    <div class="word">
-      <p>
-        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-      </p>
     </div>
   </div>
   <div class="articlebox BoxColor">
+    <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
+    <div class="word">
+      <p>
+        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
+      </p>
+    </div>
     <div class="info">
       <div class="userinfo">
         <el-avatar
@@ -37,14 +44,15 @@
       <div class="articleinfo">
         <a>查看详情</a>
       </div>
-    </div>
-    <div class="word">
-      <p>
-        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-      </p>
     </div>
   </div>
   <div class="articlebox BoxColor">
+    <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
+    <div class="word">
+      <p>
+        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
+      </p>
+    </div>
     <div class="info">
       <div class="userinfo">
         <el-avatar
@@ -59,14 +67,15 @@
       <div class="articleinfo">
         <a>查看详情</a>
       </div>
-    </div>
-    <div class="word">
-      <p>
-        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-      </p>
     </div>
   </div>
   <div class="articlebox BoxColor">
+    <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
+    <div class="word">
+      <p>
+        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
+      </p>
+    </div>
     <div class="info">
       <div class="userinfo">
         <el-avatar
@@ -81,14 +90,15 @@
       <div class="articleinfo">
         <a>查看详情</a>
       </div>
-    </div>
-    <div class="word">
-      <p>
-        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-      </p>
     </div>
   </div>
   <div class="articlebox BoxColor">
+    <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
+    <div class="word">
+      <p>
+        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
+      </p>
+    </div>
     <div class="info">
       <div class="userinfo">
         <el-avatar
@@ -104,10 +114,120 @@
         <a>查看详情</a>
       </div>
     </div>
+  </div>
+  <div class="articlebox BoxColor">
+    <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
     <div class="word">
       <p>
         这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
       </p>
+    </div>
+    <div class="info">
+      <div class="userinfo">
+        <el-avatar
+          :size="50"
+          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+        />
+        <div>
+          <p>DIMDYL</p>
+          <p>发布于：2024-05-09</p>
+        </div>
+      </div>
+      <div class="articleinfo">
+        <a>查看详情</a>
+      </div>
+    </div>
+  </div>
+  <div class="articlebox BoxColor">
+    <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
+    <div class="word">
+      <p>
+        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
+      </p>
+    </div>
+    <div class="info">
+      <div class="userinfo">
+        <el-avatar
+          :size="50"
+          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+        />
+        <div>
+          <p>DIMDYL</p>
+          <p>发布于：2024-05-09</p>
+        </div>
+      </div>
+      <div class="articleinfo">
+        <a>查看详情</a>
+      </div>
+    </div>
+  </div>
+  <div class="articlebox BoxColor">
+    <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
+    <div class="word">
+      <p>
+        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
+      </p>
+    </div>
+    <div class="info">
+      <div class="userinfo">
+        <el-avatar
+          :size="50"
+          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+        />
+        <div>
+          <p>DIMDYL</p>
+          <p>发布于：2024-05-09</p>
+        </div>
+      </div>
+      <div class="articleinfo">
+        <a>查看详情</a>
+      </div>
+    </div>
+  </div>
+  <div class="articlebox BoxColor">
+    <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
+    <div class="word">
+      <p>
+        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
+      </p>
+    </div>
+    <div class="info">
+      <div class="userinfo">
+        <el-avatar
+          :size="50"
+          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+        />
+        <div>
+          <p>DIMDYL</p>
+          <p>发布于：2024-05-09</p>
+        </div>
+      </div>
+      <div class="articleinfo">
+        <a>查看详情</a>
+      </div>
+    </div>
+  </div>
+  <div class="articlebox BoxColor">
+    <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
+    <div class="word">
+      <p>
+        这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
+      </p>
+    </div>
+    <div class="info">
+      <div class="userinfo">
+        <el-avatar
+          :size="50"
+          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+        />
+        <div>
+          <p>DIMDYL</p>
+          <p>发布于：2024-05-09</p>
+        </div>
+      </div>
+      <div class="articleinfo">
+        <a>查看详情</a>
+      </div>
     </div>
   </div>
 </template>
@@ -117,6 +237,7 @@
   padding: 20px;
   margin-bottom: 17px;
   box-sizing: border-box;
+  border-radius: 10px;
   .word {
     width: 100%;
     padding: 20px 0;
@@ -129,6 +250,7 @@
     width: 100%;
     height: 50px;
     display: flex;
+    color: #ffd04b;
     justify-content: space-between;
     align-items: center;
     .userinfo {
@@ -153,9 +275,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        &:hover {
-          color: #ffd04b;
-        }
       }
     }
   }

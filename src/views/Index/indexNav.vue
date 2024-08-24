@@ -23,7 +23,7 @@ const defaultactive = ref(location.pathname)
       </el-menu-item>
       <el-menu-item index="/cv">
         <el-icon color="#409efc" class="iconfont"> &#xe66c; </el-icon>
-        <span>我的CV</span>
+        <span>发布CV</span>
       </el-menu-item>
       <el-menu-item index="/user">
         <el-icon color="#409efc" class="iconfont">&#xe61d; </el-icon>

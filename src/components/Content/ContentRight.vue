@@ -22,6 +22,7 @@ const y = ref(layoutStore.y)
   padding-left: 10px;
   box-sizing: border-box;
   .contentbox {
+    border-radius: 10px;
     padding: 17px;
     box-sizing: border-box;
     .userinfo {

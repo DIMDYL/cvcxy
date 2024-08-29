@@ -23,8 +23,13 @@ const router = createRouter({
         },
         {
           path: '/login',
-          component: () => import('@/views/Loginregistration/index.vue'),
+          component: () => import('@/views/Login/index.vue'),
           meta: { title: '登录' }
+        },
+        {
+          path: '/register',
+          component: () => import('@/views/Register/index.vue'),
+          meta: { title: '注册' }
         },
         {
           path: '/cv',
@@ -35,6 +40,7 @@ const router = createRouter({
     }
   ]
 })
+//register
 router.afterEach((to) => {
   // 获取目标路由的meta中的title信息 进行拼接，修改 页面title
   document.title = `${to.meta.title || ''} - CV程序员 `

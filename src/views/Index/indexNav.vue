@@ -19,7 +19,7 @@ const defaultactive = ref(location.pathname)
     >
       <el-menu-item index="/">
         <el-icon color="#409efc" class="iconfont"> &#xe66c; </el-icon>
-        <span>每日总结</span>
+        <span>CV广场</span>
       </el-menu-item>
       <el-menu-item index="/cv">
         <el-icon color="#409efc" class="iconfont"> &#xe66c; </el-icon>
@@ -29,12 +29,12 @@ const defaultactive = ref(location.pathname)
         <el-icon color="#409efc" class="iconfont">&#xe61d; </el-icon>
         <span>用户中心</span>
       </el-menu-item>
-      <a href="https://github.com/DIMDYL/cvcxy" target="_blank">
+      <!-- <a href="https://github.com/DIMDYL/cvcxy" target="_blank">
         <el-menu-item>
           <el-icon color="#409efc" class="iconfont">&#xe6c2; </el-icon>
           GitHub地址
         </el-menu-item>
-      </a>
+      </a> -->
     </el-menu>
   </div>
 </template>
@@ -55,6 +55,7 @@ const defaultactive = ref(location.pathname)
 }
 
 .el-menu {
+  -webkit-user-select: none;
   border-right: none !important;
 }
 </style>

@@ -78,8 +78,12 @@
 /*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/
 @media (min-width: 480px) and (max-width: 767px) {
   /* 展示mini nav */
-  .article {
-    margin-top: 100px !important;
+  .mininav {
+    display: flex !important;
+  }
+  .article,
+  .timeline {
+    margin-bottom: 40px !important;
   }
   .raeleasecv {
     width: calc(100vw - 40px) !important;
@@ -122,6 +126,14 @@
 
 /*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
 @media (max-width: 479px) {
+  /* 展示mini nav */
+  .mininav {
+    display: flex !important;
+  }
+  .article,
+  .timeline {
+    margin-bottom: 40px !important;
+  }
   .raeleasecv {
     width: calc(100vw - 40px) !important;
   }

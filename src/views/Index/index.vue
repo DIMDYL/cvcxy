@@ -1,6 +1,7 @@
 <script setup>
 import { useLayoutStore } from '@/stores/layout.js'
 import indexNav from './indexNav.vue'
+import indexMiniNav from './indexMiniNav.vue'
 import { ref } from 'vue'
 import { useScroll } from '@vueuse/core'
 const layoutStore = useLayoutStore()
@@ -14,6 +15,9 @@ layoutStore.updatey(y)
     <div class="main" ref="el">
       <RouterView />
     </div>
+  </div>
+  <div class="mininav">
+    <indexMiniNav />
   </div>
 </template>
 <style lang="less" scoped>
@@ -33,5 +37,9 @@ layoutStore.updatey(y)
       justify-content: center;
     }
   }
+}
+.mininav {
+  display: flex;
+  justify-content: center;
 }
 </style>

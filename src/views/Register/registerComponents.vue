@@ -1,15 +1,25 @@
 <script setup>
 import { ref } from 'vue'
-
+import { SendMialzczh, register } from '@/api/userapi.js'
 const userinfo = ref({
   username: '',
-  nikename: '',
+  nickname: '',
   password: '',
-  emial: '',
+  mailnunber: '',
   validate: ''
 })
-const register = () => {
-  console.log(1)
+// 发送验证码
+const sendMail = () => {
+  SendMialzczh(userinfo.value.mailnunber)
+}
+const registeruser = () => {
+  const data = {
+    email: userinfo.value.mailnunber,
+    password: userinfo.value.password,
+    nickname: userinfo.value.nickname,
+    username: userinfo.value.username
+  }
+  register(userinfo.value.validate, data)
 }
 </script>
 <template>
@@ -21,25 +31,25 @@ const register = () => {
       style="max-width: 600px"
     >
       <el-form-item label="用户名">
-        <el-input v-model="userinfo.name" />
+        <el-input v-model="userinfo.username" />
       </el-form-item>
       <el-form-item label="昵称">
-        <el-input v-model="userinfo.nikename" />
+        <el-input v-model="userinfo.nickname" />
       </el-form-item>
       <el-form-item label="密码">
         <el-input type="password" v-model="userinfo.password" />
       </el-form-item>
       <div class="emial">
         <el-form-item label="邮箱">
-          <el-input v-model="userinfo.emial" />
+          <el-input v-model="userinfo.mailnunber" />
         </el-form-item>
-        <el-button>发送</el-button>
+        <el-button @click="sendMail">发送</el-button>
       </div>
       <el-form-item label="验证码">
         <el-input v-model="userinfo.validate" />
       </el-form-item>
       <el-form-item>
-        <a class="button" @click="register">注册</a>
+        <a class="button" @click="registeruser">注册</a>
       </el-form-item>
     </el-form>
   </div>
@@ -51,6 +61,11 @@ const register = () => {
   h1 {
     color: #ffd04b;
     margin-bottom: 10px;
+  }
+  button {
+    margin-left: 10px;
+    background-color: black;
+    color: white;
   }
   .emial {
     width: 100%;

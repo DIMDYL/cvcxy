@@ -106,7 +106,8 @@ const add = () => {
   .el-input__wrapper {
     background-color: #252527 !important;
   }
-  input {
+  input,
+  .el-select__placeholder {
     color: white !important;
   }
   .el-select__popper.el-popper {

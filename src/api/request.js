@@ -1,8 +1,7 @@
 // axios 基础封装
 import axios from 'axios'
 const request = axios.create({
-  baseURL: 'http://127.0.0.1:8080/api',
-  timeout: 1000
+  baseURL: 'http://127.0.0.1:8080/api'
 })
 request.interceptors.request.use(
   (config) => {
@@ -16,30 +15,34 @@ request.interceptors.request.use(
 //  服务器响应
 request.interceptors.response.use(
   (res) => {
+    if (res.config.method === 'get') {
+      return res.data
+    }
     const data = res.data
-    if (res.config.method == 'post') {
-      if (data.code === 0) {
-        ElNotification.error({
-          title: '成功',
-          message: data.msg
-        })
-      } else if (data.code === 1) {
-        ElNotification({
-          title: '成功',
-          message: data.msg
-        })
-        setTimeout(() => {
-          history.go(0)
-        }, 1000)
-      } else if (data.code === 2) {
-        ElNotification({
-          title: '错误',
-          message: '登录过期'
-        })
-      }
+    if (data.code === 0) {
+      ElNotification.error({
+        title: '错误',
+        message: data.msg
+      })
+    } else if (data.code === 1) {
+      ElNotification({
+        title: '成功',
+        message: data.msg
+      })
+    } else if (data.code === 2) {
+      ElNotification({
+        title: '错误',
+        message: '登录过期'
+      })
     }
     return res.data
   },
-  (e) => Promise.reject(e)
+  (e) => {
+    console.log(e)
+    ElNotification.error({
+      title: '错误',
+      message: 'netWork Error'
+    })
+  }
 )
 export default request

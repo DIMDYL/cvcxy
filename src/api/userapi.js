@@ -33,5 +33,8 @@ export const SendMialzczh = (mailnunber) => {
 
 // 用户注册
 export const register = (code, data) => {
+  if (code === '') {
+    code = 1
+  }
   request.post(`/user/user/register/${code}`, data)
 }

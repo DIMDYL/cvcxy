@@ -67,7 +67,7 @@ const add = () => {
       <el-input v-model="title" style="width: 240px" placeholder="代码标题" />
     </div>
     <div class="bottom">
-      <el-button type="primary" @click="add">提交</el-button>
+      <el-button type="primary" @click="add" v-preventReClick>提交</el-button>
     </div>
   </div>
 </template>

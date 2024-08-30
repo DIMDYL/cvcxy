@@ -29,6 +29,9 @@ request.interceptors.response.use(
         title: '成功',
         message: data.msg
       })
+      setTimeout(() => {
+        history.go(0)
+      }, 1000)
     } else if (data.code === 2) {
       ElNotification({
         title: '错误',

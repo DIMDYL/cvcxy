@@ -8,7 +8,8 @@ const data = ref([
   },
   {
     timestamp: '2024/8/16',
-    content: '这是一片测试文章...',
+    content:
+      '这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章...',
     showOperation: false
   },
   {
@@ -49,13 +50,6 @@ const data = ref([
       <el-card>
         <div class="card">
           {{ item.content }}
-          <div
-            class="operation animate__animated animate__bounce animate__flipInY"
-          >
-            <a @click.stop="up(1)">编辑</a>
-            <a @click.stop="up(2)">删除</a>
-            <a @click.stop="up(3)">查看</a>
-          </div>
         </div>
       </el-card>
     </el-timeline-item>

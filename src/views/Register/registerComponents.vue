@@ -43,7 +43,7 @@ const registeruser = () => {
         <el-form-item label="邮箱">
           <el-input v-model="userinfo.mailnunber" />
         </el-form-item>
-        <el-button @click="sendMail">发送</el-button>
+        <el-button @click="sendMail" v-preventReClick>发送</el-button>
       </div>
       <el-form-item label="验证码">
         <el-input v-model="userinfo.validate" />

@@ -1,13 +1,12 @@
 <script setup>
 import { reactive, ref } from 'vue'
 
-const formLabelAlign = reactive({
-  name: '',
-  region: '',
-  type: ''
+const user = reactive({
+  username: '',
+  password: ''
 })
 const login = () => {
-  console.log(1)
+  console.log(user)
 }
 const labelPosition = ref('Top')
 </script>
@@ -17,14 +16,14 @@ const labelPosition = ref('Top')
     <el-form
       :label-position="labelPosition"
       label-width="auto"
-      :model="formLabelAlign"
+      :model="user"
       style="max-width: 600px"
     >
       <el-form-item label="用户名">
-        <el-input v-model="formLabelAlign.name" />
+        <el-input v-model="user.username" />
       </el-form-item>
       <el-form-item label="密码">
-        <el-input type="password" v-model="formLabelAlign.region" />
+        <el-input type="password" v-model="user.password" />
       </el-form-item>
       <el-form-item>
         <a class="button" @click="login">登录</a>

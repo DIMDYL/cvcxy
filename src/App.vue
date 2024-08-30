@@ -9,7 +9,8 @@
 
 <style>
 ::-webkit-scrollbar-thumb {
-  background-color: #312d2d;
+  background-color: rgb(107, 106, 106);
+
   height: 50px;
 }
 ::-webkit-scrollbar {
@@ -18,7 +19,7 @@
 }
 /*滚动框背景样式*/
 ::-webkit-scrollbar-track-piece {
-  background-color: rgb(107, 106, 106);
+  background-color: #312d2d;
   -webkit-border-radius: 0;
 }
 /*当页面大于 1200px 时，大屏幕，主要是 PC 端*/

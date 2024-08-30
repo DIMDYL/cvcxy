@@ -26,7 +26,9 @@ const labelPosition = ref('Top')
         <el-input type="password" v-model="user.password" />
       </el-form-item>
       <el-form-item>
-        <a class="button" @click="login">登录</a>
+        <div class="button">
+          <a @click="login" v-preventReClick>登录</a>
+        </div>
       </el-form-item>
     </el-form>
   </div>
@@ -41,6 +43,7 @@ const labelPosition = ref('Top')
   }
   .button {
     width: 100%;
+    -webkit-user-select: none;
     display: flex;
     height: 30px;
     justify-content: center;

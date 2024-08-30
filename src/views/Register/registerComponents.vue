@@ -49,7 +49,9 @@ const registeruser = () => {
         <el-input v-model="userinfo.validate" />
       </el-form-item>
       <el-form-item>
-        <a class="button" @click="registeruser">注册</a>
+        <div class="button">
+          <a @click="registeruser">注册</a>
+        </div>
       </el-form-item>
     </el-form>
   </div>
@@ -82,6 +84,7 @@ const registeruser = () => {
     justify-content: center;
     cursor: pointer;
     font-size: 18px;
+    -webkit-user-select: none;
   }
 }
 </style>

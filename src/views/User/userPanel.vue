@@ -1,23 +1,20 @@
 <script setup>
+import { onMounted, ref } from 'vue'
 import userTimeLine from './userTimeLine.vue'
-import { userStore } from '@/stores/userStore.js'
-import { storeToRefs } from 'pinia'
-let userStore_ = userStore()
-let { isEdit } = storeToRefs(userStore_)
+import { getuserinfo } from '@/api/userapi.js'
+const user = ref('')
+onMounted(async () => {
+  const { data } = await getuserinfo()
+  user.value = data
+})
 </script>
 <template>
   <div class="panel">
     <div class="info BoxColor">
       <div class="infobox animate__animated animate__jackInTheBox">
-        <h1>DDD</h1>
-        <h5>DDD@DDD.DDD</h5>
-        <p>加入时间</p>
-        <h4>1991-08-16</h4>
-        <el-button
-          type="info"
-          @click="userStore_.changeStatusForEdit(!isEdit.value)"
-          >编辑</el-button
-        >
+        <h1>你好呀</h1>
+        <h3>{{ user.username }}</h3>
+        <el-button type="info">编辑</el-button>
       </div>
     </div>
     <div class="timeline BoxColor">
@@ -33,7 +30,7 @@ let { isEdit } = storeToRefs(userStore_)
   .info {
     width: 300px;
     padding: 10px;
-    height: 300px;
+    height: 200px;
     max-height: 400px;
     box-sizing: border-box;
     margin-right: 20px;

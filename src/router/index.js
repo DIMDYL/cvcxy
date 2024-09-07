@@ -35,6 +35,11 @@ const router = createRouter({
           path: '/cv',
           component: () => import('@/views/MyCv/index.vue'),
           meta: { title: '发布CV' }
+        },
+        {
+          path: '/editcode/:id',
+          component: () => import('@/views/edit/index.vue'),
+          meta: { title: '修改CV' }
         }
       ]
     }
@@ -50,6 +55,22 @@ router.afterEach((to) => {
   } else {
     // 如果没有找到特定容器，则尝试滚动整个窗口
     window.scrollTo(0, 0)
+  }
+})
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('token')
+  if (token) {
+    if (to.path === '/login' || to.path === '/register') {
+      next('/')
+    } else {
+      next()
+    }
+  } else {
+    if (to.path !== '/login' && to.path !== '/register' && to.path !== '/') {
+      next('/login')
+    } else {
+      next()
+    }
   }
 })
 export default router

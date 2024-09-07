@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup>
+import { onMounted, ref } from 'vue'
+import { getuserinfo } from '@/api/userapi.js'
+const user = ref('')
+onMounted(async () => {
+  const { data } = await getuserinfo()
+  user.value = data
+})
+</script>
 <template>
   <div class="userinfo BoxColor">
     <div class="background">
@@ -8,20 +16,23 @@
         />
       </div>
       <div class="info animate__animated animate__jackInTheBox">
-        <h1>DDD</h1>
-        <h5>DDD@DDD.DDD</h5>
+        <h1>{{ user.nickname }}</h1>
+        <h5>{{ user.email }}</h5>
       </div>
     </div>
     <div class="information">
       <ul>
+        <!-- <li class="info animate__animated animate__jackInTheBox">
+          <h1>好好学习，天天向上！</h1>
+        </li> -->
         <li class="info animate__animated animate__jackInTheBox">
           <p>加入时间</p>
-          <h4>1991-08-16</h4>
+          <h4>{{ user.createTime }}</h4>
         </li>
-        <li class="info animate__animated animate__jackInTheBox">
+        <!-- <li class="info animate__animated animate__jackInTheBox">
           <p>我的发布</p>
           <h4>30 篇</h4>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
@@ -81,6 +92,9 @@
         }
       }
     }
+  }
+  ul {
+    color: #ffd04b;
   }
 }
 </style>

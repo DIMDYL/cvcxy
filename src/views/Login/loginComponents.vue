@@ -1,12 +1,12 @@
 <script setup>
 import { reactive, ref } from 'vue'
-
+import { login } from '@/api/userapi.js'
 const user = reactive({
   username: '',
   password: ''
 })
-const login = () => {
-  console.log(user)
+const userlogin = () => {
+  login(user)
 }
 const labelPosition = ref('Top')
 </script>
@@ -27,7 +27,7 @@ const labelPosition = ref('Top')
       </el-form-item>
       <el-form-item>
         <div class="button">
-          <a @click="login" v-preventReClick>登录</a>
+          <a @click="userlogin" v-preventReClick>登录</a>
         </div>
       </el-form-item>
     </el-form>

@@ -1,7 +1,7 @@
 // axios 基础封装
 import axios from 'axios'
 const request = axios.create({
-  baseURL: 'http://127.0.0.1:8080/api'
+  baseURL: 'http://api.cvcxy.cn/api'
 })
 request.interceptors.request.use(
   (config) => {
@@ -44,8 +44,12 @@ request.interceptors.response.use(
     console.log(e)
     ElNotification.error({
       title: '错误',
-      message: 'netWork Error'
+      message: '请先登录'
     })
+    setTimeout(() => {
+      localStorage.removeItem('token')
+      history.go(0)
+    }, 1000)
   }
 )
 export default request

@@ -1,55 +1,49 @@
 <script setup>
 import { ref } from 'vue'
-const data = ref([
-  {
-    timestamp: '2024/8/16',
-    content: '这是一片测试文章...',
-    showOperation: false
-  },
-  {
-    timestamp: '2024/8/16',
-    content:
-      '这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章这是一片测试文章...',
-    showOperation: false
-  },
-  {
-    timestamp: '2024/8/16',
-    content: '这是一片测试文章...',
-    showOperation: false
-  },
-  {
-    timestamp: '2024/8/16',
-    content: '这是一片测试文章...',
-    showOperation: false
-  },
-  {
-    timestamp: '2024/8/16',
-    content: '这是一片测试文章...',
-    showOperation: false
-  },
-  {
-    timestamp: '2024/8/16',
-    content: '这是一片测试文章...',
-    showOperation: false
-  },
-  {
-    timestamp: '2024/8/16',
-    content: '这是一片测试文章...',
-    showOperation: false
+import { getallbyuserid } from '@/api/userapi.js'
+const codelist = ref([])
+const pagedata = {
+  size: 10,
+  page: 0,
+  key: ''
+}
+// onMounted(async () => {
+//   const { data } = await getallbyuserid({
+//     pagedata
+//   })
+//   codelist.value = data.records
+//   console.log(data)
+// })
+const load = async () => {
+  pagedata.page++
+  const { data } = await getallbyuserid(pagedata)
+  if (!data.records.length == 0) {
+    codelist.value.push(...data.records)
+  } else {
+    pagedata.page--
   }
-])
+}
 </script>
 <template>
-  <el-timeline>
+  <el-timeline v-infinite-scroll="load">
     <el-timeline-item
-      v-for="item in data"
-      :key="item"
-      :timestamp="item.timestamp"
+      v-for="item in codelist"
+      :key="item.id"
+      :timestamp="item.createTime"
       placement="top"
     >
       <el-card>
         <div class="card">
-          {{ item.content }}
+          {{ item.title }}
+          <div
+            class="operation animate__animated animate__bounce animate__flipInY"
+            v-if="item.status == 1"
+          >
+            <a :href="'/editcode/' + item.id">编辑</a>
+            <a>删除</a>
+            <a>查看</a>
+          </div>
+          <div v-if="item.status == 0" style="margin-top: 10px">审核中</div>
         </div>
       </el-card>
     </el-timeline-item>

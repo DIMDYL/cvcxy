@@ -142,6 +142,16 @@
     flex-wrap: wrap;
     height: auto !important;
   }
+  .infobox {
+    h3,
+    h1 {
+      margin: 10px;
+      font-size: 15px !important;
+    }
+    h1 {
+      font-size: 20px !important;
+    }
+  }
   .userinfo {
     width: 100% !important;
   }

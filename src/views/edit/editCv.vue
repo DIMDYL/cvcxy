@@ -1,9 +1,15 @@
 <script setup>
-import { addCode, getallclassification } from '@/api/userapi.js'
+import {
+  updatebyidcode,
+  getallclassification,
+  findbyidcode
+} from '@/api/userapi.js'
 import { ref, onMounted } from 'vue'
 import CodeMirror from 'vue-codemirror6'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { java } from '@codemirror/lang-java'
+import { useRoute } from 'vue-router'
+const route = useRoute()
 // const initJson = null
 // 初始化
 let codeVal = ref('')
@@ -17,6 +23,7 @@ const extensions = [oneDark]
 const title = ref('')
 const Classificationid = ref('')
 const options = ref([])
+const codeid = route.params.id
 // 渲染分类
 onMounted(async () => {
   const { data } = await getallclassification()
@@ -30,15 +37,23 @@ onMounted(async () => {
   })
 })
 
-// 添加code
-const add = () => {
+// 修改code
+const update = () => {
   const data = {
     title: title.value,
     classId: Number(Classificationid.value),
-    code: codeVal.value
+    code: codeVal.value,
+    id: codeid
   }
-  addCode(data)
+  updatebyidcode(data)
 }
+onMounted(async () => {
+  const { data } = await findbyidcode(codeid)
+  console.log(data)
+  title.value = data.title
+  codeVal.value = data.code
+  Classificationid.value = data.classId
+})
 </script>
 <template>
   <div class="raeleasecv">
@@ -67,7 +82,9 @@ const add = () => {
       <el-input v-model="title" style="width: 240px" placeholder="代码标题" />
     </div>
     <div class="bottom">
-      <el-button type="primary" @click="add" v-preventReClick>提交</el-button>
+      <el-button type="primary" @click="update" v-preventReClick
+        >提交</el-button
+      >
     </div>
   </div>
 </template>

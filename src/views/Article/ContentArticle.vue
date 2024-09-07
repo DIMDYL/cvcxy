@@ -1,238 +1,55 @@
 <script setup>
-import { ref } from 'vue'
-const input = ref('')
+import { ref, onMounted } from 'vue'
+import { getallcode } from '@/api/userapi.js'
+const pagedata = ref({
+  page: 1,
+  size: 10,
+  key: ''
+})
+let total = ref(0)
+const codelist = ref([])
+onMounted(async () => {
+  const { data } = await getallcode(pagedata.value)
+  total.value = data.total
+  codelist.value = data.records
+})
+const so = async () => {
+  codelist.value = []
+  const { data } = await getallcode(pagedata.value)
+  console.log(codelist)
+  total.value = data.total
+  codelist.value = data.records
+}
+const handleChange = async (page) => {
+  pagedata.value.page = page
+  const { data } = await getallcode(pagedata.value)
+  console.log(codelist)
+  total.value = data.total
+  codelist.value = data.records
+}
 </script>
 <template>
   <div class="articlelist">
     <div class="searchbox BoxColor">
       <div class="search">
-        <el-input v-model="input" style="width: 240px" placeholder="搜一下？" />
-        <button>搜索</button>
+        <el-input
+          v-model="pagedata.key"
+          style="width: 240px"
+          placeholder="搜一下？"
+        />
+        <button @click="so">搜索</button>
       </div>
     </div>
-    <div class="articlebox BoxColor">
-      <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
-      <div class="word">
-        <p>
-          这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-        </p>
-      </div>
+    <div v-for="item in codelist" :key="item.id" class="articlebox BoxColor">
+      <p style="font-size: 15 px">{{ item.classification.name }}</p>
+      <div class="title">{{ item.title }}</div>
+      <div class="word"></div>
       <div class="info">
         <div class="userinfo">
-          <el-avatar
-            :size="50"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
+          <el-avatar :size="50" :src="item.user.avatar" />
           <div>
-            <p>DIMDYL</p>
-            <p>发布于：2024-05-09</p>
-          </div>
-        </div>
-        <div class="articleinfo">
-          <a>查看详情</a>
-        </div>
-      </div>
-    </div>
-    <div class="articlebox BoxColor">
-      <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
-      <div class="word">
-        <p>
-          这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-        </p>
-      </div>
-      <div class="info">
-        <div class="userinfo">
-          <el-avatar
-            :size="50"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
-          <div>
-            <p>DIMDYL</p>
-            <p>发布于：2024-05-09</p>
-          </div>
-        </div>
-        <div class="articleinfo">
-          <a>查看详情</a>
-        </div>
-      </div>
-    </div>
-    <div class="articlebox BoxColor">
-      <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
-      <div class="word">
-        <p>
-          这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-        </p>
-      </div>
-      <div class="info">
-        <div class="userinfo">
-          <el-avatar
-            :size="50"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
-          <div>
-            <p>DIMDYL</p>
-            <p>发布于：2024-05-09</p>
-          </div>
-        </div>
-        <div class="articleinfo">
-          <a>查看详情</a>
-        </div>
-      </div>
-    </div>
-    <div class="articlebox BoxColor">
-      <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
-      <div class="word">
-        <p>
-          这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-        </p>
-      </div>
-      <div class="info">
-        <div class="userinfo">
-          <el-avatar
-            :size="50"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
-          <div>
-            <p>DIMDYL</p>
-            <p>发布于：2024-05-09</p>
-          </div>
-        </div>
-        <div class="articleinfo">
-          <a>查看详情</a>
-        </div>
-      </div>
-    </div>
-    <div class="articlebox BoxColor">
-      <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
-      <div class="word">
-        <p>
-          这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-        </p>
-      </div>
-      <div class="info">
-        <div class="userinfo">
-          <el-avatar
-            :size="50"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
-          <div>
-            <p>DIMDYL</p>
-            <p>发布于：2024-05-09</p>
-          </div>
-        </div>
-        <div class="articleinfo">
-          <a>查看详情</a>
-        </div>
-      </div>
-    </div>
-    <div class="articlebox BoxColor">
-      <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
-      <div class="word">
-        <p>
-          这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-        </p>
-      </div>
-      <div class="info">
-        <div class="userinfo">
-          <el-avatar
-            :size="50"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
-          <div>
-            <p>DIMDYL</p>
-            <p>发布于：2024-05-09</p>
-          </div>
-        </div>
-        <div class="articleinfo">
-          <a>查看详情</a>
-        </div>
-      </div>
-    </div>
-    <div class="articlebox BoxColor">
-      <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
-      <div class="word">
-        <p>
-          这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-        </p>
-      </div>
-      <div class="info">
-        <div class="userinfo">
-          <el-avatar
-            :size="50"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
-          <div>
-            <p>DIMDYL</p>
-            <p>发布于：2024-05-09</p>
-          </div>
-        </div>
-        <div class="articleinfo">
-          <a>查看详情</a>
-        </div>
-      </div>
-    </div>
-    <div class="articlebox BoxColor">
-      <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
-      <div class="word">
-        <p>
-          这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-        </p>
-      </div>
-      <div class="info">
-        <div class="userinfo">
-          <el-avatar
-            :size="50"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
-          <div>
-            <p>DIMDYL</p>
-            <p>发布于：2024-05-09</p>
-          </div>
-        </div>
-        <div class="articleinfo">
-          <a>查看详情</a>
-        </div>
-      </div>
-    </div>
-    <div class="articlebox BoxColor">
-      <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
-      <div class="word">
-        <p>
-          这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-        </p>
-      </div>
-      <div class="info">
-        <div class="userinfo">
-          <el-avatar
-            :size="50"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
-          <div>
-            <p>DIMDYL</p>
-            <p>发布于：2024-05-09</p>
-          </div>
-        </div>
-        <div class="articleinfo">
-          <a>查看详情</a>
-        </div>
-      </div>
-    </div>
-    <div class="articlebox BoxColor">
-      <div class="title">vue3中使用prismjs或者highlight.js实现代码高亮</div>
-      <div class="word">
-        <p>
-          这是一篇测试文章....这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章这是一篇测试文章.......
-        </p>
-      </div>
-      <div class="info">
-        <div class="userinfo">
-          <el-avatar
-            :size="50"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-          />
-          <div>
-            <p>DIMDYL</p>
-            <p>发布于：2024-05-09</p>
+            <p>{{ item.user.nickname }}</p>
+            <p>发布于：{{ item.createTime }}</p>
           </div>
         </div>
         <div class="articleinfo">
@@ -241,10 +58,41 @@ const input = ref('')
       </div>
     </div>
   </div>
+  <div class="page">
+    <el-pagination
+      background="#252527"
+      @current-change="handleChange"
+      layout="prev, pager, next"
+      :total="total"
+    />
+  </div>
 </template>
 <style lang="less" scoped>
+/deep/.el-pager {
+  flex-wrap: wrap;
+}
+.page {
+  background-color: #252527;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+/deep/.number,
+/deep/.btn-next,
+/deep/ .btn-prev,
+/deep/ .more {
+  background-color: #252527 !important;
+  color: white !important;
+  border: 1px solid white;
+}
+/deep/.is-active {
+  background-color: #000000 !important;
+}
 .articlelist {
   width: 100%;
+  .title {
+    color: rgb(200, 182, 182);
+  }
   .searchbox {
     width: 100%;
     margin-bottom: 20px;
@@ -273,6 +121,7 @@ const input = ref('')
     border-radius: 10px;
     .word {
       width: 100%;
+      // height: 200px;
       padding: 20px 0;
       text-indent: 2em;
       p {

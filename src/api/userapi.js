@@ -37,6 +37,19 @@ export const register = (code, data) => {
   }
   request.post(`/user/user/register/${code}`, data)
 }
+
+
+// 更新用户信息
+export const updateuser = (data) => {
+  request.put('/user/user/update/', data).then((res) => {
+    if (res.code === 1) {
+      setTimeout(() => {
+        history.go(0)
+      }, 500)
+    }
+  })
+}
+
 // 登录
 export const login = (data) => {
   request.post('/user/user/login', data).then((res) => {
@@ -59,6 +72,11 @@ export const getallbyuserid = (data) => {
 // 根据id获取code
 export const findbyidcode = (id) => {
   return request.get(`/user/code/findbyid/${id}`)
+}
+
+// 根据id获取code
+export const delcode = (id) => {
+   request.post(`/user/code/del/${id}`)
 }
 
 // 根据id修改code

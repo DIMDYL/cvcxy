@@ -16,8 +16,8 @@ import loginComponents from './loginComponents.vue'
         </div>
         <loginComponents />
         <div class="bottom">
-          <a href="forgotpassword">忘记密码</a>
-          <a href="/register">去注册</a>
+          <!-- <a href="forgotpassword">忘记密码</a> -->
+          <!-- <a href="/register">去注册</a> -->
         </div>
       </div>
     </div>

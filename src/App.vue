@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <!-- <div class="boxx" ref="cvcxy">
-    <img src="@/assets/imgs/cvcxy.gif" />
-  </div> -->
+  <div class="boxx" ref="cvcxy">
+    <img ref="cvimg" src="@/assets/imgs/cv.gif" />
+  </div>
   <RouterView />
 </template>
 
@@ -28,7 +28,8 @@
 
 /*在 992 和 1199 像素之间的屏幕里，中等屏幕，分辨率低的 PC*/
 @media (min-width: 992px) and (max-width: 1199px) {
-  .raeleasecv {
+  .raeleasecv,
+  .code-toolbar {
     width: calc(100vw - 240px) !important;
   }
   .panel {
@@ -53,7 +54,8 @@
 
 /*在 768 和 991 像素之间的屏幕里，小屏幕，主要是 PAD*/
 @media (min-width: 768px) and (max-width: 991px) {
-  .raeleasecv {
+  .raeleasecv,
+  .code-toolbar {
     width: calc(100vw - 240px) !important;
   }
   .panel {
@@ -86,7 +88,8 @@
   .timeline {
     margin-bottom: 40px !important;
   }
-  .raeleasecv {
+  .raeleasecv,
+  .code-toolbar {
     width: calc(100vw - 40px) !important;
   }
   .panel {
@@ -135,7 +138,8 @@
   .timeline {
     margin-bottom: 40px !important;
   }
-  .raeleasecv {
+  .raeleasecv,
+  .code-toolbar {
     width: calc(100vw - 40px) !important;
   }
   .info {
@@ -211,11 +215,16 @@ body {
   justify-content: center;
   align-items: center;
 }
+img {
+  width: 400px;
+}
 </style>
-<!-- <script setup>
+<script setup>
 import { ref } from 'vue'
 const cvcxy = ref(null)
+const cvimg = ref(null)
 setTimeout(() => {
   cvcxy.value.style.display = 'none'
+  cvimg.value.src = '@/assets/imgs/cv.gif'
 }, 1000)
-</script> -->
+</script>

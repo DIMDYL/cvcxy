@@ -40,6 +40,15 @@ const router = createRouter({
           path: '/editcode/:id',
           component: () => import('@/views/edit/index.vue'),
           meta: { title: '修改CV' }
+        },
+        {
+          path: '/look/:id',
+          component: () => import('@/views/Look/index.vue'),
+          meta: { title: '查看' }
+        },{
+          path: '/updateuser',
+          component: () => import('@/views/updateuser/index.vue'),
+          meta: { title: '修改信息' }
         }
       ]
     }

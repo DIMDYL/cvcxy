@@ -52,7 +52,7 @@ onMounted(async () => {
   console.log(data)
   title.value = data.title
   codeVal.value = data.code
-  Classificationid.value = data.classId
+  Classificationid.value = data.classification.id
 })
 </script>
 <template>

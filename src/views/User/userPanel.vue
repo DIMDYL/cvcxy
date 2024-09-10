@@ -14,7 +14,9 @@ onMounted(async () => {
       <div class="infobox animate__animated animate__jackInTheBox">
         <h1>你好呀</h1>
         <h3>{{ user.username }}</h3>
-        <el-button type="info">编辑</el-button>
+        <a href="/updateuser">
+          <el-button type="info" >编辑</el-button>
+        </a>
       </div>
     </div>
     <div class="timeline BoxColor">

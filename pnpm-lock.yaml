@@ -44,6 +44,9 @@ importers:
       pinia-plugin-persistedstate:
         specifier: ^3.2.1
         version: 3.2.1(pinia@2.1.7(vue@3.4.27))
+      prismjs:
+        specifier: ^1.29.0
+        version: 1.29.0
       vue:
         specifier: ^3.4.21
         version: 3.4.27
@@ -2224,7 +2227,7 @@ snapshots:
 
   '@vueuse/shared@10.9.0(vue@3.4.27)':
     dependencies:
-      vue-demi: 0.14.7(vue@3.4.27)
+      vue-demi: 0.14.10(vue@3.4.27)
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue

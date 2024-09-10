@@ -53,14 +53,14 @@ const handleChange = async (page) => {
           </div>
         </div>
         <div class="articleinfo">
-          <a>查看详情</a>
+          <a :href="'/look/' + item.id">查看详情</a>
         </div>
       </div>
     </div>
   </div>
   <div class="page">
     <el-pagination
-      background="#252527"
+      background=""
       @current-change="handleChange"
       layout="prev, pager, next"
       :total="total"

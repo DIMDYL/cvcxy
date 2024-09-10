@@ -1,9 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import ContentUserinfo from './ContentUserinfo.vue'
-import ContentPleaselogin from './ContentPleaselogin.vue'
-import { useUserInfoStore } from '@/stores/userinfo.js'
-const useUserInfo = useUserInfoStore()
 import { useLayoutStore } from '@/stores/layout.js'
 const layoutStore = useLayoutStore()
 const y = ref(layoutStore.y)
@@ -11,8 +7,8 @@ const y = ref(layoutStore.y)
 <template>
   <div class="contentright" :class="{ top: y > 200 }">
     <div class="contentbox BoxColor">
-      <ContentUserinfo v-if="useUserInfo.loginstatus === true" />
-      <ContentPleaselogin v-if="useUserInfo.loginstatus === false" />
+      <img src="@/assets/imgs/logo.gif" />
+      <h1>Hello World！</h1>
     </div>
   </div>
 </template>
@@ -25,30 +21,11 @@ const y = ref(layoutStore.y)
     border-radius: 10px;
     padding: 17px;
     box-sizing: border-box;
-    .userinfo {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      .avatar {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        overflow: hidden;
-        /deep/ .el-avatar {
-          width: 100%;
-          height: 100%;
-        }
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .info {
-        padding: 10px 0;
-        color: #ffd04b;
-        text-align: center;
-      }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 200px;
     }
   }
   .top {

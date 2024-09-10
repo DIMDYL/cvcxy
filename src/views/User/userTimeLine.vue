@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { getallbyuserid } from '@/api/userapi.js'
+import { getallbyuserid,delcode } from '@/api/userapi.js'
 const codelist = ref([])
 const pagedata = {
   size: 10,
@@ -23,6 +23,9 @@ const load = async () => {
     pagedata.page--
   }
 }
+const confirm = (id)=>{
+  delcode(id)
+}
 </script>
 <template>
   <el-timeline v-infinite-scroll="load">
@@ -40,8 +43,13 @@ const load = async () => {
             v-if="item.status == 1"
           >
             <a :href="'/editcode/' + item.id">编辑</a>
-            <a>删除</a>
-            <a>查看</a>
+            <el-popconfirm     @confirm="confirm(item.id)"
+            title="确定要删除吗？">
+              <template #reference>
+                <a>删除</a>
+              </template>
+            </el-popconfirm>
+            <a  :href="'/look/' + item.id">查看</a>
           </div>
           <div v-if="item.status == 0" style="margin-top: 10px">审核中</div>
         </div>

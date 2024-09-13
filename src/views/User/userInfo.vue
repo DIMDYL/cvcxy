@@ -11,9 +11,7 @@ onMounted(async () => {
   <div class="userinfo BoxColor">
     <div class="background">
       <div class="avatar animate__animated animate__jackInTheBox">
-        <el-avatar
-          :src="user.avatar"
-        />
+        <el-avatar :src="user.avatar" />
       </div>
       <div class="info animate__animated animate__jackInTheBox">
         <h1>{{ user.nickname }}</h1>

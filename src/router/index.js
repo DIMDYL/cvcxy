@@ -45,7 +45,8 @@ const router = createRouter({
           path: '/look/:id',
           component: () => import('@/views/Look/index.vue'),
           meta: { title: '查看' }
-        },{
+        },
+        {
           path: '/updateuser',
           component: () => import('@/views/updateuser/index.vue'),
           meta: { title: '修改信息' }
@@ -74,6 +75,8 @@ router.beforeEach((to, from, next) => {
     } else {
       next()
     }
+  } else if (to.path.startsWith('/look/')) {
+    next()
   } else {
     if (to.path !== '/login' && to.path !== '/register' && to.path !== '/') {
       next('/login')

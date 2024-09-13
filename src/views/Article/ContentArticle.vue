@@ -26,6 +26,15 @@ const handleChange = async (page) => {
   console.log(codelist)
   total.value = data.total
   codelist.value = data.records
+  // 获取 .main盒子
+  const contentContainer = document.querySelector('.main')
+  // 如果盒子存在就盒子滚动到0
+  if (contentContainer) {
+    contentContainer.scrollTop = 0
+  } else {
+    // 如果没有找到特定容器，则尝试滚动整个窗口
+    window.scrollTo(0, 0)
+  }
 }
 </script>
 <template>
@@ -76,6 +85,7 @@ const handleChange = async (page) => {
   padding: 10px;
   border-radius: 10px;
   box-sizing: border-box;
+  box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.621);
 }
 /deep/.number,
 /deep/.btn-next,
@@ -119,6 +129,12 @@ const handleChange = async (page) => {
     margin-bottom: 17px;
     box-sizing: border-box;
     border-radius: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.621);
+    &:hover {
+      transform: translateY(-2px);
+    }
     .word {
       width: 100%;
       // height: 200px;

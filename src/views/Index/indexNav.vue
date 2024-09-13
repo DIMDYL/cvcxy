@@ -18,7 +18,7 @@ const defaultactive = ref(location.pathname)
       text-color="#fff"
     >
       <el-menu-item index="/">
-        <el-icon color="#409efc" class="iconfont"> &#xe66c; </el-icon>
+        <el-icon color="#409efc" class="iconfont"> &#xe639; </el-icon>
         <span>CV广场</span>
       </el-menu-item>
       <el-menu-item index="/cv">

@@ -24,6 +24,9 @@
 }
 /*当页面大于 1200px 时，大屏幕，主要是 PC 端*/
 @media (min-width: 1200px) {
+  .code-toolbar {
+    width: calc(100vw - 640px) !important;
+  }
 }
 
 /*在 992 和 1199 像素之间的屏幕里，中等屏幕，分辨率低的 PC*/

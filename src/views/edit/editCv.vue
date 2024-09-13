@@ -54,6 +54,9 @@ onMounted(async () => {
   codeVal.value = data.code
   Classificationid.value = data.classification.id
 })
+const returnbtn = () => {
+  history.go(-1)
+}
 </script>
 <template>
   <div class="raeleasecv">
@@ -82,6 +85,7 @@ onMounted(async () => {
       <el-input v-model="title" style="width: 240px" placeholder="代码标题" />
     </div>
     <div class="bottom">
+      <el-button @click="returnbtn" v-preventReClick>返回</el-button>
       <el-button type="primary" @click="update" v-preventReClick
         >提交</el-button
       >

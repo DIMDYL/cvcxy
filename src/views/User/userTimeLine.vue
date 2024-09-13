@@ -1,19 +1,17 @@
 <script setup>
-import { ref } from 'vue'
-import { getallbyuserid,delcode } from '@/api/userapi.js'
+import { ref, onMounted } from 'vue'
+import { getallbyuserid, delcode } from '@/api/userapi.js'
 const codelist = ref([])
 const pagedata = {
   size: 10,
-  page: 0,
+  page: 1,
   key: ''
 }
-// onMounted(async () => {
-//   const { data } = await getallbyuserid({
-//     pagedata
-//   })
-//   codelist.value = data.records
-//   console.log(data)
-// })
+onMounted(async () => {
+  const { data } = await getallbyuserid(pagedata)
+  codelist.value = data.records
+  console.log(data)
+})
 const load = async () => {
   pagedata.page++
   const { data } = await getallbyuserid(pagedata)
@@ -23,7 +21,7 @@ const load = async () => {
     pagedata.page--
   }
 }
-const confirm = (id)=>{
+const confirm = (id) => {
   delcode(id)
 }
 </script>
@@ -43,13 +41,12 @@ const confirm = (id)=>{
             v-if="item.status == 1"
           >
             <a :href="'/editcode/' + item.id">编辑</a>
-            <el-popconfirm     @confirm="confirm(item.id)"
-            title="确定要删除吗？">
+            <el-popconfirm @confirm="confirm(item.id)" title="确定要删除吗？">
               <template #reference>
                 <a>删除</a>
               </template>
             </el-popconfirm>
-            <a  :href="'/look/' + item.id">查看</a>
+            <a :href="'/look/' + item.id">查看</a>
           </div>
           <div v-if="item.status == 0" style="margin-top: 10px">审核中</div>
         </div>

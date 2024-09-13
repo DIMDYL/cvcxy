@@ -26,7 +26,7 @@ const options = ref([])
 const codeid = route.params.id
 // 渲染分类
 onMounted(async () => {
-  const { data } = await getallclassification()
+  const { data } = (await getallclassification()) || []
   console.log(data)
   data.forEach((item) => {
     const step = {
@@ -48,7 +48,7 @@ const update = () => {
   updatebyidcode(data)
 }
 onMounted(async () => {
-  const { data } = await findbyidcode(codeid)
+  const { data } = (await findbyidcode(codeid)) || []
   console.log(data)
   title.value = data.title
   codeVal.value = data.code

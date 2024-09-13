@@ -50,6 +50,11 @@ const router = createRouter({
           path: '/updateuser',
           component: () => import('@/views/updateuser/index.vue'),
           meta: { title: '修改信息' }
+        },
+        {
+          path: '/:catchAll(.*)',
+          meta: '页面被人复制走了',
+          component: () => import('@/views/404/index.vue')
         }
       ]
     }

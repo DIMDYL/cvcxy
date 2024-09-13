@@ -41,15 +41,19 @@ request.interceptors.response.use(
     return res.data
   },
   (e) => {
-    console.log(e)
-    ElNotification.error({
-      title: '错误',
-      message: '请先登录'
-    })
-    setTimeout(() => {
-      localStorage.removeItem('token')
-      history.go(0)
-    }, 1000)
+    console.log(e.status)
+    if (e.status === 401) {
+      ElNotification.error({
+        title: '错误',
+        message: '请先登录'
+      })
+      setTimeout(() => {
+        localStorage.removeItem('token')
+        history.go(0)
+      }, 1000)
+    } else if (e.status === 500) {
+      location.href = '/404'
+    }
   }
 )
 export default request

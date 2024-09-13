@@ -12,7 +12,7 @@ const classification = ref('')
 const nickname = ref('')
 const avatar = ref('')
 onMounted(async () => {
-  const { data } = await findbyidcode(id)
+  const { data } = (await findbyidcode(id)) || []
   console.log(data)
   codeinfo.value = data
   classification.value = data.classification.name

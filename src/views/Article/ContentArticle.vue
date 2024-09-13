@@ -15,7 +15,7 @@ onMounted(async () => {
 })
 const so = async () => {
   codelist.value = []
-  const { data } = await getallcode(pagedata.value)
+  const { data } = (await getallcode(pagedata.value)) || []
   console.log(codelist)
   total.value = data.total
   codelist.value = data.records

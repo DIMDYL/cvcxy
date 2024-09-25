@@ -25,6 +25,7 @@
   bottom: 5px;
   height: 60px;
   justify-content: center;
+  -webkit-user-select: none;
   .islogin {
     width: 90%;
     display: flex;

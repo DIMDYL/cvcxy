@@ -13,7 +13,6 @@ onMounted(async () => {
   user.value = data
 })
 const logout = () => {
-  // localStorage.removeItem('token')
   ElNotification({
     title: '成功',
     message: '退出成功'

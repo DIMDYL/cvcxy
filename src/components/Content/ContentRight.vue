@@ -7,14 +7,11 @@ const y = ref(layoutStore.y)
 <template>
   <div class="contentright" :class="{ top: y > 200 }">
     <div class="contentbox BoxColor">
-      <img
-        class="animate__animated animate__bounce animate__bounceInRight"
-        src="http://api.cvcxy.cn/img/b5f5b2a8-dff5-4702-ac30-2437d62c1dec.png"
-      />
-      <h1
-        style="margin-top: 17px; color: #ffd04b"
-        class="animate__animated animate__bounce animate__rubberBand"
-      >
+      <!--         class="animate__animated animate__bounce animate__bounceInRight" -->
+      <img src="@/assets/imgs/dim.jpg" />
+      <h1 style="margin-top: 17px; color: #ffd04b">
+        <!--         class="animate__animated animate__bounce animate__rubberBand"
+ -->
         好好学习，天天向上！
       </h1>
     </div>

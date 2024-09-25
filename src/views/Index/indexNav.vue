@@ -43,6 +43,7 @@ const defaultactive = ref(location.pathname)
   width: 200px;
   height: 100%;
   overflow: hidden;
+  -webkit-user-select: none;
   .top {
     width: 100%;
     height: 177px;

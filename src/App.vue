@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <div class="boxx" ref="cvcxy">
+  <!-- <div class="boxx" ref="cvcxy">
     <img ref="cvimg" src="@/assets/imgs/cv.gif" />
-  </div>
+  </div> -->
   <RouterView />
 </template>
 
@@ -223,11 +223,11 @@ img {
 }
 </style>
 <script setup>
-import { ref } from 'vue'
-const cvcxy = ref(null)
-const cvimg = ref(null)
-setTimeout(() => {
-  cvcxy.value.style.display = 'none'
-  cvimg.value.src = '@/assets/imgs/cv.gif'
-}, 1000)
+//import { ref } from 'vue'
+//const cvcxy = ref(null)
+//const cvimg = ref(null)
+//setTimeout(() => {
+//  cvcxy.value.style.display = 'none'
+//  cvimg.value.src = '@/assets/imgs/cv.gif'
+//}, 1000)
 </script>

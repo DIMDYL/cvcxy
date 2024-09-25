@@ -4,13 +4,11 @@ import { getallbyuserid, delcode } from '@/api/userapi.js'
 const codelist = ref([])
 const pagedata = {
   size: 10,
-  page: 1,
+  page: 0,
   key: ''
 }
 onMounted(async () => {
-  const { data } = await getallbyuserid(pagedata)
-  codelist.value = data.records
-  console.log(data)
+  load()
 })
 const load = async () => {
   pagedata.page++

@@ -8,7 +8,9 @@ const pagedata = {
   key: ''
 }
 onMounted(async () => {
-  load()
+  if (codelist.value.length == 0) {
+    load()
+  }
 })
 const load = async () => {
   pagedata.page++

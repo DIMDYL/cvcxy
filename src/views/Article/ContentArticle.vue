@@ -1,31 +1,43 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { getallcode } from '@/api/userapi.js'
+import { getallcode, getallclassification } from '@/api/userapi.js'
 const pagedata = ref({
   page: 1,
   size: 10,
-  key: ''
+  key: '',
+  classid: ''
 })
+const classificationlist = ref('')
+// 获取所有分类
+onMounted(async () => {
+  const { data } = await getallclassification()
+  classificationlist.value = data
+  pagedata.value.classid = data[0].id
+  getallcodelist()
+})
+const classclick = (id) => {
+  pagedata.value.classid = id
+  pagedata.value.page = 1
+  getallcodelist()
+}
 let total = ref(0)
 const codelist = ref([])
-onMounted(async () => {
-  const { data } = await getallcode(pagedata.value)
-  total.value = data.total
-  codelist.value = data.records
-})
+// 获取所有code
+// onMounted(async () => {
+//   getallcodelist()
+// })
 const so = async () => {
+  getallcodelist()
+}
+const getallcodelist = async () => {
   codelist.value = []
   const { data } = (await getallcode(pagedata.value)) || []
-  console.log(codelist)
   total.value = data.total
   codelist.value = data.records
 }
 const handleChange = async (page) => {
   pagedata.value.page = page
-  const { data } = await getallcode(pagedata.value)
-  console.log(codelist)
-  total.value = data.total
-  codelist.value = data.records
+  getallcodelist()
   // 获取 .main盒子
   const contentContainer = document.querySelector('.main')
   // 如果盒子存在就盒子滚动到0
@@ -48,6 +60,17 @@ const handleChange = async (page) => {
         />
         <button @click="so">搜索</button>
       </div>
+      <div class="classbox">
+        <div
+          class="class-item"
+          v-for="item in classificationlist"
+          :key="item.id"
+          :class="item.id === pagedata.classid ? 'classboxactitve' : ''"
+          @click="classclick(item.id)"
+        >
+          {{ item.name }}
+        </div>
+      </div>
     </div>
     <div v-for="item in codelist" :key="item.id" class="articlebox BoxColor">
       <p style="font-size: 15 px">{{ item.classification.name }}</p>
@@ -62,7 +85,7 @@ const handleChange = async (page) => {
           </div>
         </div>
         <div class="articleinfo">
-          <a :href="'/look/' + item.id">查看详情</a>
+          <a target="_black" :href="'/look/' + item.id">查看详情</a>
         </div>
       </div>
     </div>
@@ -70,6 +93,7 @@ const handleChange = async (page) => {
   <div class="page">
     <el-pagination
       background=""
+      v-model:current-page="pagedata.page"
       @current-change="handleChange"
       layout="prev, pager, next"
       :total="total"
@@ -115,6 +139,35 @@ const handleChange = async (page) => {
       justify-content: space-between;
       border-radius: 10px;
       overflow: hidden;
+    }
+    .classbox {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #252527;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      .class-item {
+        background-color: #19191b;
+        color: white;
+        padding: 10px 15px;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition:
+          background-color 0.3s,
+          transform 0.3s;
+      }
+
+      .class-item:hover {
+        background-color: #35373a;
+        transform: translateY(-2px);
+      }
+    }
+    .classboxactitve {
+      background-color: red !important;
     }
     button {
       width: 100px;

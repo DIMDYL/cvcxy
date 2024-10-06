@@ -48,11 +48,13 @@ const returnbtn = () => {
         />
       </div>
       <h3 style="margin-top: 10px">{{ codeinfo.title }}</h3>
-      <div class="top-bar">
+      <p>发布：{{ codeinfo.createTime }}</p>
+
+      <!-- <div class="top-bar">
         <p>发布：{{ codeinfo.createTime }}</p>
         <button class="return" @click="returnbtn">返回</button>
-      </div>
-      <p>分类：{{ classification }} _ 发布人：{{ nickname }}</p>
+      </div> -->
+      <p>分类：{{ classification }} - 发布人：{{ nickname }}</p>
     </div>
 
     <pre><code class="language-js line-numbers">{{ codes }}</code></pre>

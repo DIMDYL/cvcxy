@@ -38,7 +38,6 @@ export const register = (code, data) => {
   request.post(`/user/user/register/${code}`, data)
 }
 
-
 // 更新用户信息
 export const updateuser = (data) => {
   request.put('/user/user/update/', data).then((res) => {
@@ -65,7 +64,7 @@ export const getuserinfo = () => {
 // 根据用户id获取code
 export const getallbyuserid = (data) => {
   return request.get(
-    `/user/code/getallbyuserid?page=${data.page}&size=${data.size}&key=${data.key}`
+    `/user/code/getallbyuserid?page=${data.page}&size=${data.size}&key=${data.key}&classid=${data.classid}`
   )
 }
 
@@ -76,22 +75,16 @@ export const findbyidcode = (id) => {
 
 // 根据id获取code
 export const delcode = (id) => {
-   request.post(`/user/code/del/${id}`)
+  request.post(`/user/code/del/${id}`)
 }
 
 // 根据id修改code
 export const updatebyidcode = (data) => {
-  request.post('/user/code/update', data).then((res) => {
-    if (res.code == 1) {
-      setTimeout(() => {
-        location.href = '/user'
-      }, 1000)
-    }
-  })
+  request.post('/user/code/update', data)
 }
 // 获取所有文章
 export const getallcode = (data) => {
   return request.get(
-    `/user/code/getall?page=${data.page}&size=${data.size}&key=${data.key}`
+    `/user/code/getall?page=${data.page}&size=${data.size}&key=${data.key}&classid=${data.classid}`
   )
 }
